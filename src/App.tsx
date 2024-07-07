@@ -1,8 +1,17 @@
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import Navigation from "./components/ui/Navigation";
+
+import HomePage from "./pages/HomePage";
+import MainLayout from "./components/layouts/MainLayout";
 
 function App() {
-  return <Navigation />;
+  return (
+    <Routes>
+      <Route path="/" element={<MainLayout />}>
+        <Route index element={<HomePage />} />
+      </Route>
+    </Routes>
+  );
 }
 
 export default App;
